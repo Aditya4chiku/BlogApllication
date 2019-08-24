@@ -1,0 +1,21 @@
+<div class="login">
+        <form class="text-center border border-light p-5" #login="ngForm" (submit)="loginData()">
+         <p class="h4 mb-4">Sign In</p>
+       
+         <div class="form-group">
+         <input type="text" class="form-control mb-4" name="username" [class.is-invalid]="username.invalid && username.touched"  required  #username="ngModel"   placeholder="Enter Username" [(ngModel)]="user.username">
+         <span class="text-danger" [class.d-none]="username.valid || username.untouched" >username is required</span>
+        </div>
+        
+         <input type="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required name="password"  class="form-control mb-4"  placeholder="Enter Password" [(ngModel)]="user.password">
+         <span class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</span>
+        
+         <div class="d-flex justify-content-around">
+             <div>           
+             </div>       
+         </div>
+               <button  [disabled]="login.form.invalid" class="button btn-block my-4" type="submit">Sign In</button>  
+     </form>
+     
+     </div>
+    
